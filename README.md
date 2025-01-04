@@ -1,13 +1,28 @@
-To run the code <br>
+## To Run the Code
+
+Clone the repository:
+```bash
 git clone <repo_url>
+```
 
-<br><br>
+Navigate to the project directory:
 
-cd directory 
-<br><br>
+```bash
+cd directory
+```
 
-npm i 
-<br><br>
+Install the dependencies:
+```bash
+npm install
+```
 
+
+```bash
 npm run dev
-<br><br>
+```
+
+
+
+
+
+

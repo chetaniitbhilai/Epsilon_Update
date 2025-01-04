@@ -6,12 +6,33 @@ import { events } from '../data/events';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [showEvents, setShowEvents] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
+
+  const handleMouseLeave = () => {
+    // Clear any existing timeout to avoid overlapping timeouts
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    
+    // Set a new timeout to close the events menu after 1 second
+    const id = setTimeout(() => {
+      setShowEvents(false);
+    }, 1000);
+    
+    setTimeoutId(id);
+  };
 
   return (
     <header className="bg-navy-900 text-white">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">Tech Club</Link>
+          <Link to="/" className="text-xl font-bold">
+            <img 
+              src="./images/Epsilon.png" 
+              alt="Tech Club Logo" 
+              className="h-12 w-auto" 
+            />
+          </Link>
           
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="hover:text-blue-400 transition">Home</Link>
@@ -19,7 +40,7 @@ export default function Header() {
               <button 
                 className="flex items-center hover:text-blue-400 transition"
                 onMouseEnter={() => setShowEvents(true)}
-                onMouseLeave={() => setShowEvents(false)}
+                onMouseLeave={handleMouseLeave}
               >
                 Events <ChevronDown className="ml-1 w-4 h-4" />
               </button>
@@ -27,7 +48,7 @@ export default function Header() {
                 <div 
                   className="absolute top-full left-0 bg-navy-800 py-2 rounded-md shadow-lg w-48"
                   onMouseEnter={() => setShowEvents(true)}
-                  onMouseLeave={() => setShowEvents(false)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   {events.map(event => (
                     <Link

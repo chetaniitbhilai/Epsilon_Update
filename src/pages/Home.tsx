@@ -17,23 +17,22 @@ export default function Home() {
           className="container mx-auto px-4 py-24 relative"
         >
           <div className="text-center mb-16 relative">
-            <GlowText>
+            
               <h1 className="text-6xl font-bold mb-6">
-                <GradientText>Welcome to Tech Club</GradientText>
+                <GradientText>Welcome to Epsilon Club</GradientText>
               </h1>
-            </GlowText>
+            
             <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Empowering students to innovate, create, and lead in the world of technology
+              Empowering students to innovate, create, and lead in the world of robotics
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Card shine className="p-8">
+              <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6">About Us</h2>
                 <p className="text-gray-300 mb-4 leading-relaxed">
-                  Tech Club is a vibrant community of passionate students and mentors dedicated to 
-                  exploring and advancing technology through hands-on projects, workshops, and events.
+                Epsilon Club is One of the Clubs of IIT Bhilai, that deals with Technical knowledge and helps develop interests of the students in Robotics. Robots are one of the most important hardware implementations in the history of technology which ease the human efforts when in use, in industries : like painting robots, assembly robots, etc. , or in a place with specific targeted use, like Drones : in giving aerial view of a particular place, or as humanoid robots which represent the development of Artificial Intelligence.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
                   Our mission is to provide a platform for students to develop their technical skills,
@@ -44,7 +43,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full" />
               <img 
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
+                src="./images/session1_2023.jpg"
                 alt="Tech Club Meeting"
                 className="relative rounded-lg shadow-2xl"
               />
@@ -57,7 +56,7 @@ export default function Home() {
       <div className="py-24 bg-gradient-to-b from-navy-900 to-navy-800">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-16 text-center">
-            <GlowText>What We Offer</GlowText>
+            What We Offer
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -88,7 +87,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card shine className="p-6 h-full">
+                <Card  className="p-6 h-full">
                   <div className="flex flex-col items-center text-center">
                     <div className="p-3 bg-blue-500/10 rounded-lg mb-4">
                       <item.icon className="w-8 h-8 text-blue-400" />
@@ -112,7 +111,6 @@ export default function Home() {
               { number: "500+", label: "Members" },
               { number: "50+", label: "Projects" },
               { number: "100+", label: "Events" },
-              { number: "30+", label: "Awards" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

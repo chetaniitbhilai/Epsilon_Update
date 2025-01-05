@@ -1,9 +1,9 @@
 export const teamMembers = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Santosh Prajapat",
     role: "Mentor",
-    image: "https://via.placeholder.com/300x400", // Placeholder image
+    image: "./images/team2024/santosh.jpg", // Placeholder image
     socialLinks: {
       linkedin: "https://linkedin.com/in/johndoe",
       github: "https://github.com/johndoe",

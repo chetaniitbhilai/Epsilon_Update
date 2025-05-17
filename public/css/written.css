@@ -4,10 +4,11 @@ html {
 /*banner*/
 .banner {
   position: relative;
-  aspect-ratio: 15 / 10;
   width: 100%;
+  min-height: 300px;
+  max-height: 450px;
   background-image: url("../images/title.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -16,6 +17,7 @@ html {
   justify-content: center;
   overflow: hidden;
 }
+
 
 .overlay {
   position: absolute;

@@ -3,12 +3,23 @@ html {
 }
 /*banner*/
 
+:root {
+  --primary-color: #00fff7;
+  --secondary-color: #0084ff;
+  --hover-color: #ff4081;
+  --bg-color: #0a0a0a;
+  --text-glow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00eaff;
+  --shadow-glow: 0 4px 30px rgba(0, 255, 247, 0.2);
+  --font-tech: 'Orbitron', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Banner with sci-fi style */
 .banner {
   position: relative;
   width: 100%;
   min-height: 350px;
   max-height: 500px;
-  background-image: url("../images/title.jpg"); 
+  background-image: url("../images/title.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,25 +29,25 @@ html {
   overflow: hidden;
   padding: 20px;
   z-index: 0;
-  border-radius: 12px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(0, 128, 255, 0.2);
 }
 
-.banner::before {
-  content: "";
+/* Futuristic glowing overlay */
+.overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, rgba(0,255,204,0.3), rgba(0,128,255,0.2));
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 0, 64, 0.4));
+  backdrop-filter: blur(4px);
   z-index: 1;
-  pointer-events: none;
 }
 
+/* Logos */
 .logob, .logoe {
   position: absolute;
   top: 20px;
   z-index: 2;
 }
-
 .logoe { left: 20px; }
 .logob { right: 20px; }
 
@@ -46,21 +57,20 @@ html {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px #00fff7, 0 0 20px #0084ff;
   transition: transform 0.3s ease;
 }
-
 #logobhilai:hover, #logoepsilon:hover {
   transform: scale(1.05);
 }
 
+/* Responsive logos */
 @media (max-width: 768px) {
   #logobhilai, #logoepsilon {
     width: 80px;
     height: 80px;
   }
 }
-
 @media (max-width: 480px) {
   #logobhilai, #logoepsilon {
     width: 60px;
@@ -68,33 +78,49 @@ html {
   }
 }
 
-/*heading*/
-
-:root {
-  --primary-color: #00fff7;
-  --secondary-color: #0084ff;
-  --hover-color: #ff4081;
-  --bg-color: #0a0a0a;
-  --text-glow: 0 0 5px #00fff7, 0 0 10px #00fff7;
-  --shadow-glow: 0 4px 30px rgba(0, 255, 247, 0.2);
-  --font-tech: 'Orbitron', 'Segoe UI', Roboto, sans-serif;
-}
-
+/* Heading with sci-fi style */
 .heading {
   position: relative;
   z-index: 3;
   text-align: center;
-  font-size: 4vw;
-  margin-top: 30px;
   font-family: var(--font-tech);
-  background: linear-gradient(90deg, #00fff7, #0084ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: var(--text-glow);
   opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 0.5s;
 }
+
+.heading h1, .heading h2 {
+  margin: 0;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00fff7, #0084ff, #00fff7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--text-glow);
+}
+
+/* Font size for larger and smaller devices */
+.heading h1 {
+  font-size: 4vw;
+}
+.heading h2 {
+  font-size: 2.5vw;
+}
+
+@media (max-width: 768px) {
+  .heading h1 {
+    font-size: 7vw;
+  }
+  .heading h2 {
+    font-size: 4vw;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .content {
   display: flex;

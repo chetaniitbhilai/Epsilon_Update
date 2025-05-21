@@ -112,7 +112,6 @@ body::before {
   opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 0.5s;
-  animation: flicker 3s infinite;
 }
 
 .heading h1 {
@@ -122,6 +121,7 @@ body::before {
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 3px #000, 0 0 5px #00fff7;
   font-family: var(--font-tech);
+  animation: flicker 3s infinite;
 
 }
 
@@ -137,6 +137,7 @@ body::before {
   display: inline-block;
   border-radius: 6px;
   font-family: var(--font-tech);
+  animation: flicker 3s infinite;
 
 }
 
@@ -178,7 +179,6 @@ body::before {
   opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 1s;
-  animation: flicker 3s infinite;
 }
 
 a {
@@ -187,6 +187,8 @@ a {
   transition: all 0.3s ease;
   position: relative;
   font-family: var(--font-tech);
+  animation: flicker 3s infinite;
+
 
 }
 a::after {
@@ -254,7 +256,6 @@ font-family: var(--font-tech);
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 1.5s;
-  animation: flicker 3s infinite;
 }
 
 #robo {
@@ -265,6 +266,7 @@ font-family: var(--font-tech);
   font-weight: bold;
   color: #00fff2;
   font-family: var(--font-tech);
+  animation: flicker 3s infinite;
 
 }
 

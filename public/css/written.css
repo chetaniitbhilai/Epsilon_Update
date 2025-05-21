@@ -1,3 +1,4 @@
+
 html {
   scroll-behavior: smooth;
 }
@@ -89,6 +90,7 @@ body::before {
   opacity: 0.25;
   z-index: -1;
   filter: drop-shadow(0 0 10px #0ff);
+  
 }
 
 @keyframes circuitGlow {
@@ -101,7 +103,6 @@ body::before {
   position: relative;
   z-index: 3;
   text-align: center;
-  font-family: var(--font-tech);
   padding: 20px 40px;
   background: rgba(0, 0, 0, 0.5); 
     border: 1px solid rgba(0, 255, 255, 0.3);
@@ -111,6 +112,7 @@ body::before {
   opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 0.5s;
+  animation: flicker 3s infinite;
 }
 
 .heading h1 {
@@ -119,6 +121,8 @@ body::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 3px #000, 0 0 5px #00fff7;
+  font-family: var(--font-tech);
+
 }
 
 .heading h2 {
@@ -132,6 +136,8 @@ body::before {
   background-color: rgba(0, 0, 0, 0.4); 
   display: inline-block;
   border-radius: 6px;
+  font-family: var(--font-tech);
+
 }
 
 
@@ -172,6 +178,7 @@ body::before {
   opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 1s;
+  animation: flicker 3s infinite;
 }
 
 a {
@@ -179,6 +186,8 @@ a {
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
+  font-family: var(--font-tech);
+
 }
 a::after {
   content: "";
@@ -191,15 +200,21 @@ a::after {
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
+  font-family: var(--font-tech);
+
 }
 
 a:hover {
   color: var(--hover-color);
+  font-family: var(--font-tech);
+
 }
 
 a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+  font-family: var(--font-tech);
+
 }
 
 @keyframes fadeIn {
@@ -213,10 +228,19 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: var(--font-tech);
+
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+.font
+{
+  font-family: var(--font-tech);
 
+}
+ @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+      50% { opacity: 0.8; text-shadow: 0 0 20px #0ff, 0 0 30px #0ff; }
+    }
 /*roborealm*/
 .introduction {
   max-width: 900px;
@@ -225,11 +249,12 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-family: var(--font-tech);
   color: #00e0ff;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 1.5s;
+  animation: flicker 3s infinite;
 }
 
 #robo {
@@ -239,6 +264,8 @@ body {
   text-align: left;
   font-weight: bold;
   color: #00fff2;
+  font-family: var(--font-tech);
+
 }
 
 .intro-text {
@@ -246,6 +273,8 @@ body {
   font-size: 1.1rem;
   line-height: 1.5;
   text-align: left;
+  font-family: var(--font-tech);
+
 }
 
 .moto {
@@ -256,7 +285,7 @@ body {
 /*founder box start*/
 .founder {
   text-align: center;
-  width: 300px;
+  width: 350px;
   min-height: 140px;
   margin: 40px auto;
   padding: 20px;
@@ -266,7 +295,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
@@ -274,6 +302,8 @@ body {
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
   box-shadow: 0 0 15px rgba(255, 0, 110, 0.4);
+  font-family: var(--font-tech);
+animation: flicker 3s infinite;
 
 }
 
@@ -297,7 +327,7 @@ body {
 /*coordinator box start*/
 .COORDINATOR {
   text-align: center;
-  width: 300px;
+  width: 350px;
   min-height: 140px;
   margin: 40px auto;
   padding: 20px;
@@ -315,6 +345,7 @@ body {
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
   box-shadow: 0 0 20px rgba(131, 56, 236, 0.5);
+  animation: flicker 3s infinite;
 
 }
 
@@ -377,6 +408,7 @@ body {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 2s;
+   animation: flicker 3s infinite;
 }
 
 .mentor h1 {
@@ -398,7 +430,7 @@ body {
 .mentorbox {
   background: linear-gradient(135deg, #005f73, #0a9396);
   color: #ffffff;
-  width: 300px;
+  width: 350px;
   min-height: 140px;
   padding: 20px;
   margin: 20px;
@@ -467,6 +499,7 @@ body {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
   animation-delay: 1s;
+   animation: flicker 3s infinite;
 }
 
 .core-member h1 {
@@ -489,7 +522,7 @@ body {
   padding: 25px 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 320px;
+  max-width: 350px;
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -552,6 +585,8 @@ footer {
    opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 2s;
+animation: flicker 3s infinite;
+
 }
 
 

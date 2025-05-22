@@ -95,39 +95,118 @@
    </g>
   </svg></div> 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="#">Events</a>
-    <a href="achievement.html">Achievements</a>
-    <a href="index.html#team">Team</a>
+  <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+  <a href="index.html">Home</a>
+  <a href="#">Events</a>
+  <a href="achievement.html">Achievements</a>
+  <a href="index.html#team">Team</a>
+  <a href="#footer">Contact Us</a>
+</nav>
 
-    <a href="#footer">Contact Us</a>
-  </nav>
-  <section class="hero">
-    <img src="float1.png" class="floating float1">
-    <img src="float2.png" class="floating float2">
-    <img src="float3.png" class="floating float3">
-    <h1>EPSILON ROBOTICS</h1>
-    <p>FUTURE BEGINS HERE</p>
-  </section>
-  <section class="events">
-    <div class="event-card">
-      <h2>ROBO RACE</h2>
-      <p>Fast-paced obstacle race for robots. Time and accuracy both matter.</p>
+<section class="hero">
+  <img src="public/images/Events/header/photo (1).JPG" class="floating float1">
+  <img src="public/images/Events/header/photo (2).JPG" class="floating float2">
+  <img src="public/images/Events/header/photo (3).JPG" class="floating float3">
+  <img src="public/images/Events/header/photo (4).JPG" class="floating float4">
+  <img src="public/images/Events/header/photo (5).JPG" class="floating float5">
+  <img src="public/images/Events/header/photo (6).jpg" class="floating float6">
+  <img src="public/images/Events/header/photo (7).jpg" class="floating float7">
+  <img src="public/images/Events/header/photo (8).JPG" class="floating float8">
+
+  <h1>EPSILON ROBOTICS</h1>
+  <p>FUTURE BEGINS HERE</p>
+</section> <!-- close hero -->
+
+<section class="events">
+  <div class="event-card" onclick="showImages(this)">
+    <h2>MERAZ x EPSILON</h2>
+    <h3>Where Innovation Meets Celebration</h3>
+    <p>Every year at Meraz, the grand techno-cultural fest of IIT Bhilai, the Epsilon Club takes center stage to showcase the future of robotics and innovation. As the official robotics and automation club of the institute, Epsilon leads high-tech events, live demos, and mind-bending challenges that push the boundaries of creativity and engineering. From autonomous robots to action-packed competitions, Epsilon transforms the Meraz arena into a hub of futuristic energy and collaboration. Whether you're a tech enthusiast or just curious, our zone is where machines come to life — and everyone is welcome.
+
+</p>
+    <div class="popup-images">
+      <img src="public/images/Events/meraz 24-25/IMG_1252.JPG" />
+      <img src="public/images/Events/meraz 24-25/IMG_1313.JPG" />
+      <img src="public/images/Events/meraz 24-25/IMG_1316.JPG" />
     </div>
-    <div class="event-card">
-      <h2>LINE FOLLOWER</h2>
-      <p>Robots must follow the most complex line tracks autonomously.</p>
+  </div>
+
+  <div class="event-card" onclick="showImages(this)" >
+    <h2>Robo Kabaddi</h2>
+    <h3>where robots clash with speed, skill, and unstoppable spirit!</h3>
+    <p>Robo Kabaddi is an exciting fusion of traditional kabaddi and cutting-edge robotics. In this thrilling competition, teams build and control robots that compete in fast-paced kabaddi matches, showcasing innovation, strategy, and teamwork. It’s where technology meets sport, pushing the limits of engineering and agility on the playing field. Get ready for intense action, smart moves, and robotic power!</p>
+    <div class="popup-images">
+      <img src="public/images/Events/Robo Kabbadi 20222-23/DSC_1432.JPG" />
+      <img src="public/images/Events/Robo Kabbadi 20222-23/DSC_1434.JPG" />
+      <img src="public/images/Events/Robo Kabbadi 20222-23/DSC_1436.JPG" />
+      <img src="public/images/Events/Robo Kabbadi 20222-23/DSC_1438.JPG" />
     </div>
-    <div class="event-card">
-      <h2>TECH WORKSHOP</h2>
-      <p>Hands-on learning sessions in AI, circuits, and embedded tech.</p>
+     <video controls width="320" height="240" >
+      <source src="public/images/Events/Robo Kabbadi 20222-23/DSCF4681.MOV" type="video/mp4" />
+      
+    </video>
+  </div>
+  <div class="event-card" onclick="showImages(this)">
+    <h2>Robo Soccer</h2>
+    <h3>where robotics meets the thrill of the beautiful game!</h3>
+    <p>Our teams design and program autonomous robots to compete in exciting soccer matches, showing teamwork, strategy, and cutting-edge technology. Join us to build, code, and score goals on the field of robotics innovation!</p>
+    <div class="popup-images">
+      <img src="public/images/Events/Robo soccer/IMG_4641.JPG" />
+      <img src="public/images/Events/Robo soccer/IMG_4649.JPG" />
+      <img src="public/images/Events/Robo soccer/IMG_4654.JPG" />
+      <img src="public/images/Events/Robo soccer/IMG_4665.JPG" />
     </div>
-  </section>
-  <section class="media">
-    <h2>EVENT HIGHLIGHTS</h2>
-    <img src="your-image.jpg" alt="Event Image">
-    <video controls src="your-video.mp4"></video>
-  </section>
+     <video controls width="320" height="240" >
+      <source src="public/images/Events/Robo soccer/MVI_4646.MP4" type="video/mp4" />
+      
+    </video>
+  </div>
+  <div class="event-card" onclick="showImages(this)">
+    <h2>Summer Of Robotics 2024-25</h2>
+    <h3> Exciting journey in robotics in summer!</h3>
+    <p>The Summer Of Robotics 2024-25 is a hands-on program where participants build and program robots, learn new skills, and take part in fun challenges. Whether you are a beginner or a pro, this summer is all about innovation, teamwork, and exploring the future of technology.</p>
+    <div class="popup-images">
+      <img src="public/images/Events/Summer of robotics 2024-25/2.jpg" />
+      <img src="public/images/Events/Summer of robotics 2024-25/3.jpg" />
+      <img src="public/images/Events/Summer of robotics 2024-25/4.jpg" />
+    </div>
+  </div>
+ <div class="event-card" onclick="showImages(this)">
+    <h2>Workshop</h2>
+    <h3>Learn, build, and explore robotics through hands-on workshops.</h3>
+    <p>Our workshops are designed to give students practical experience in robotics, electronics, and programming. From building simple bots to advanced systems, these sessions are perfect for learning, experimenting, and growing your skills. Join our workshops to turn your curiosity into real-world creations!</p>
+    <div class="popup-images">
+      <img src="public/images/Events/Workshop/IMG_20230122_005132.jpg" />
+      <img src="public/images/Events/Workshop/IMG_20230122_011025.jpg" />
+      <img src="public/images/Events/Workshop/IMG_20230126_180741_1.jpg" />
+      <img src="public/images/Events/Workshop/Picture4.png" />
+      <img src="public/images/Events/Workshop/Picture5.jpg" />
+      <img src="public/images/Events/Workshop/Picture6.png" />
+      <img src="public/images/Events/Workshop/Picture7.jpg" />
+      <img src="public/images/Events/Workshop/Picture8.png" />
+      <img src="public/images/Events/Workshop/Picture9.png" />
+
+
+    </div>
+     <video controls width="320" height="240" >
+      <source src="public/images/Events/Workshop/VID-20230129-WA0044.mp4" type="video/mp4" />
+      
+    </video>
+  </div>
+
+
+  
+<div class="upcoming-events">
+  <h3>Upcoming Events</h3>
+  <div class="scroll-text">
+    <p>Event-1</p>
+    <p>Event-2</p>
+    <p>Event-3</p>
+    <p>Event-4</p>
+  </div>
+</div>
+
+
    <g id="head">
      <g id="face">
        <path id="screen-shadow" fill="#9AB2B0" d="M418.268,235.276C377.932,233.144,327.52,232,300.003,232
@@ -169,6 +248,8 @@
   <script src="public/js/preloader.js"></script>
 <script src="public/js/animate-index.js"></script>
 <script src="public/chatbot.js"></script>
+<script src="public/js/event.js"></script>
+
 
 
   <script>

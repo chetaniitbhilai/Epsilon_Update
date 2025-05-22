@@ -62,6 +62,7 @@ body {
   border: 3px solid var(--primary-color);
   box-shadow: 0 0 20px var(--primary-color);
   transition: transform 0.3s ease;
+  
 }
 #logobhilai:hover, #logoepsilon:hover {
   transform: scale(1.08);
@@ -117,9 +118,7 @@ body {
   border-bottom: 2px solid #00fff7;
   font-family: var(--font-tech);
   text-transform: uppercase;
-  opacity: 0;
-  animation: fadeIn 1.2s ease-in forwards;
-  animation-delay: 1s;
+  
 }
 
 a {
@@ -158,11 +157,7 @@ a:hover::after {
 
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
+
 
 body {
   background-color: var(--bg-color);
@@ -215,10 +210,11 @@ body {
 
 .tile-image {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-bottom: 2px solid var(--timeline-color);
 }
+
 
 .tile-content {
   padding: 20px;

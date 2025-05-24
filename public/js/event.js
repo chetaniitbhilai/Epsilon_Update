@@ -5,7 +5,7 @@ function showImages(card) {
     return;
   }
 
-  const maxWidth = window.innerWidth - 150;  // width of cloned images
+  const maxWidth = window.innerWidth - 150;
   const maxHeight = window.innerHeight - 150;
 
   images.forEach(img => {

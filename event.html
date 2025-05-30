@@ -132,14 +132,15 @@
      </g>
    </g>
   </svg></div>
-<div class="content">
-  <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
-  <a href="index.html">Home</a>
-  <a href="project.html">Projects</a>
-  <a href="achievement.html">Achievements</a>
-  <a href="index.html#team">Team</a>
-  <a href="#footer">Contact Us</a>
-</div>
+<canvas id="background-canvas"></canvas>
+
+<nav class="nav-bar">
+    <a href="index.html">Home</a>
+    <a href="event.html">Events</a>
+    <a href="achievement.html">Achievements</a>
+    <a href="index.html#team">Team</a>
+    <a href="#footer">Contact</a>
+  </nav>
 
 <section class="hero">
   <img src="public/images/Events/header/photo (1).JPG" class="floating float1">
@@ -246,15 +247,21 @@
 
 
   
-<div class="upcoming-events">
-  <h3>Upcoming Events</h3>
-  <div class="scroll-text">
-    <p>Event-1</p>
-    <p>Event-2</p>
-    <p>Event-3</p>
-    <p>Event-4</p>
+<div class="upcoming-wrapper">
+    <button class="toggle-upcoming">▶</button>
+    <aside class="upcoming-sidebar hidden">
+      <button class="close-sidebar">×</button>
+      <h2>Upcoming Projects</h2>
+      <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+        <li>Project 4</li>
+        <li>Project 5</li>
+      </ul>
+    </aside>
   </div>
-</div>
+
 
 
    

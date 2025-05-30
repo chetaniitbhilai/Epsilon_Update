@@ -132,99 +132,103 @@
      </g>
    </g>
   </svg></div>
-   <div class="content">
-  <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
-  <a href="index.html">Home</a>
-  <a href="event.html">Events</a>
-  <a href="achievement.html">Achievements</a>
-  <a href="index.html#team">Team</a>
-  <a href="#footer">Contact Us</a>
-</div>
+<canvas id="background-canvas"></canvas>
 
-<section class="hero">
-  <img src="public/images/Events/header/photo (1).JPG" class="floating float1">
-  <img src="public/images/Events/header/photo (7).jpg" class="floating float2">
-  <img src="public/images/Events/header/photo (3).JPG" class="floating float3">
-  <img src="public/images/Events/header/photo (4).JPG" class="floating float4">
-  <img src="public/images/Events/header/photo (5).JPG" class="floating float5">
-  <img src="public/images/Events/header/photo (6).jpg" class="floating float6">
-  <img src="public/images/Events/header/photo (8).JPG" class="floating float8">
+  <nav class="nav-bar">
+    <a href="index.html">Home</a>
+    <a href="event.html">Events</a>
+    <a href="achievement.html">Achievements</a>
+    <a href="index.html#team">Team</a>
+    <a href="#footer">Contact</a>
+  </nav>
 
-  <h1>EPSILON ROBOTICS</h1>
-  <p>Innovations From Minds of Epsilon</p>
-</section> 
+  <section class="hero-section">
+    <h1>EPSILON ROBOTICS</h1>
+    <p>Innovations from Minds of Epsilon</p>
 
-<section class="events">
-  <div class="event-card" >
-    <img src="public/images/projects/Chess playing robot.jpg" alt="Chess Playing Robot">
+    <div class="floating-images">
+      <img src="public/images/projects/header/Copy of Copy of IMG_2103.JPG" class="float float1" />
+      <img src="public/images/projects/header/Copy of Copy of IMG_2125.JPG" class="float float2" />
+      <img src="public/images/projects/header/Copy of IMG_2064.JPG" class="float float3" />
+      <img src="public/images/projects/header/Copy of IMG_2073.JPG" class="float float4" />
+      <img src="public/images/projects/header/Copy of IMG_2086.JPG" class="float float5" />
+      <img src="public/images/projects/header/Copy of IMG_2004.JPG" class="float float6" />
+      <img src="public/images/projects/header/Copy of IMG_2003.JPG" class="float float7" />
+    </div>
+  </section>
+
+  <section class="projects-grid">
+    <div class="project-card">
+      <img src="public/images/projects/Chess playing robot.jpg" />
+      <h3>Chess Playing Robot</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/drone.jpg" />
+      <h3>Autonomous Drone</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/DSC_0686.JPG" />
+      <h3>Advanced Vision Bot</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/Gestur controlled robot.jpg" />
+      <h3>Gesture Controlled Robot</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/obstaacle avoiding robot.jpg" />
+      <h3>Obstacle Avoiding Robot</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/Obstacle avoiding robot 2.0.jpg" />
+      <h3>Obstacle Avoiding Robot 2.0</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/Pick and Place Robot.jpg" />
+      <h3>Pick and Place Robot</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/PID control line follower.jpg" />
+      <h3>PID Line Follower</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/quadruped robot.jpg" />
+      <h3>Quadruped Robot</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/RC transmitter.jpg" />
+      <h3>RC Transmitter</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/Ro-Boat2.JPG" />
+      <h3>Ro-Boat 2</h3>
+    </div>
+    <div class="project-card">
+      <img src="public/images/projects/Robotic Arm.png" />
+      <h3>Robotic Arm</h3>
+    </div>
+  </section>
+
+  <div class="upcoming-wrapper">
+    <button class="toggle-upcoming">▶</button>
+    <aside class="upcoming-sidebar hidden">
+      <button class="close-sidebar">×</button>
+      <h2>Upcoming Projects</h2>
+      <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+        <li>Project 4</li>
+        <li>Project 5</li>
+      </ul>
+    </aside>
   </div>
+  <script src="public/js/project.js"></script>
 
-  <div class="event-card" >
-    <img src="public/images/projects/drone.jpg" alt="Drone">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/DSC_0686.JPG" alt="DSC Image">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/Gestur controlled robot.jpg" alt="Gesture Controlled Robot">
-  </div>
-
-  <div class="event-card">
-    <img src="public/images/projects/obstaacle avoiding robot.jpg" alt="Obstacle Avoiding Robot">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/Obstacle avoiding robot 2.0.jpg" alt="Obstacle Avoiding Robot 2.0">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/Pick and Place Robot.jpg" alt="Pick and Place Robot">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/PID control line follower.jpg" alt="PID Control Line Follower">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/quadruped robot.jpg" alt="Quadruped Robot">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/RC transmitter.jpg" alt="RC Transmitter">
-  </div>
-
-  <div class="event-card">
-    <img src="public/images/projects/Ro-Boat2.JPG" alt="Ro-Boat 2">
-  </div>
-
-  <div class="event-card" >
-    <img src="public/images/projects/Robotic Arm.png" alt="Robotic Arm">
-  </div>
-</section>
-
-
-
-  
-<div class="upcoming-events">
-  <h3>Upcoming Projects</h3>
-  <div class="scroll-text">
-    <p>Project-1</p>
-    <p>Project-2</p>
-    <p>Project-3</p>
-    <p>Project-4</p>
-  </div>
-</div>
-
-
-  <script src="public/js/preloader.js"></script>
+<script src="public/js/preloader.js"></script>
 <script src="public/js/animate-index.js"></script>
 <script src="public/chatbot.js"></script>
 
-
-  <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KcPe9hhG8PmAQ8R5pTXo3";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  <script>(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KcPe9hhG8PmAQ8R5pTXo3";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
 </body>
 </html>

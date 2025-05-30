@@ -1,30 +1,61 @@
-function showImages(card) {
-  const images = card.querySelectorAll('.popup-images img');
-  if (images.length === 0) {
-    console.log('No images found in popup-images');
-    return;
-  }
+const toggleBtn = document.querySelector('.toggle-upcoming');
+const sidebar = document.querySelector('.upcoming-sidebar');
+const closeBtn = document.querySelector('.close-sidebar');
 
-  const maxWidth = window.innerWidth - 150;
-  const maxHeight = window.innerHeight - 150;
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('hidden');
+});
 
-  images.forEach(img => {
-    const floating = img.cloneNode();
-    floating.classList.add('popup-image-fly');
-
-    floating.style.top = Math.random() * maxHeight + 'px';
-    floating.style.left = Math.random() * maxWidth + 'px';
-    floating.style.transform = `rotate(${Math.random() * 360}deg)`;
-
-    document.body.appendChild(floating);
-
-    setTimeout(() => {
-      floating.style.opacity = '0';
-      setTimeout(() => floating.remove(), 500);
-    }, 4500);
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.add('hidden');
   });
 }
-function toggleSidebar() {
-  document.body.classList.toggle('sidebar-hidden');
+
+// Background canvas setup
+const canvas = document.getElementById('background-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
+resizeCanvas();
+
+let particles = [];
+
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 2 + 1,
+    speedX: (Math.random() * 0.5) - 0.25,
+    speedY: (Math.random() * 0.5) - 0.25,
+  });
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00bfff';
+
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+});

@@ -364,14 +364,42 @@ nav {
 
 
 .event-card {
-  position: relative;
-  background: rgba(0, 0, 20, 0.6);
-  border: 1px solid cyan;
+  background: #0e0e0e;
+  color: #fff;
   padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  overflow: hidden;
+  margin: 1rem auto;
+  width: 80%;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.popup-images {
+  display: none;
+}
+
+.floating-image {
+  position: fixed;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00f2ff;
+  animation: fadeIn 0.4s ease;
+  z-index: 9999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .event-card:hover {
@@ -408,11 +436,5 @@ nav {
 }
 
 
-.event-card video {
-  max-width: 100%;
-  height: auto;
-  margin-top: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00fff7;
-}
+
 

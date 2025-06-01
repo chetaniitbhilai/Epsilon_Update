@@ -59,3 +59,29 @@ animateParticles();
 window.addEventListener('resize', () => {
   resizeCanvas();
 });
+let currentPopup = null;
+
+function showRandomImage(card) {
+  hidePopupImage();
+  const images = card.querySelectorAll(".popup-images img");
+  if (images.length === 0) return;
+
+  const randomImg = images[Math.floor(Math.random() * images.length)];
+  const popup = document.createElement("img");
+  popup.src = randomImg.src;
+  popup.className = "floating-image";
+
+  const x = Math.random() * (window.innerWidth - 300);
+  const y = Math.random() * (window.innerHeight - 300);
+  popup.style.left = `${x}px`;
+  popup.style.top = `${y}px`;
+
+  document.body.appendChild(popup);
+  currentPopup = popup;
+}
+
+function hidePopupImage() {
+  if (currentPopup) {
+    currentPopup.remove();
+    currentPopup = null;
+  }}

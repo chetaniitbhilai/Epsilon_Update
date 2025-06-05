@@ -86,64 +86,57 @@ nav {
   color: rgb(238, 136, 19);
   text-shadow: 0 0 10px cyan;
 }
-
-
 .hero {
-  height: 100dvh;
-  padding: 4rem 1rem 0 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  padding: 8rem 1rem 6rem;
+  position: relative;
+  overflow: visible;
   background: linear-gradient(145deg, #000, #0ff2);
   color: #0ff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  box-sizing: border-box;
-  min-height: 400px;
+  border-bottom: 2px solid cyan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 150%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 255, 0.05),
+    rgba(0, 255, 255, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scanline 15s linear infinite;
+  z-index: 0;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  animation: flicker 3s infinite;
-  text-shadow: var(--text-glow);
-  user-select: none;
-  margin: 0;
-  line-height: 1.1;
+  font-size: 3.5rem;
+  color: cyan;
+  text-shadow: 0 0 30px cyan;
+  position: relative;
+  z-index: 1;
+  animation: glow-pulse 2s infinite ease-in-out;
 }
 
 .hero p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  margin-top: 1rem;
-  color: #00fff7cc;
-  font-weight: 500;
-  max-width: 600px;
-  padding: 0 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.4;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #ffffffcc;
+  z-index: 1;
+  position: relative;
 }
-
-@media (max-width: 480px) {
-  .hero {
-    min-height: 40vh;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-}
-
 
 .floating {
   position: absolute;
-  width: clamp(120px, 14vw, 220px);
+  width: clamp(80px, 10vw, 160px);
   z-index: 0;
   opacity: 0.8;
   pointer-events: none;
@@ -160,7 +153,7 @@ nav {
 .float1 { top: 6%; left: 5%; animation: floatWander1 10s infinite; }
 .float2 { top: 10%; right: 10%; animation: floatWander2 12s infinite; }
 .float3 { bottom: 15%; left: 10%; animation: floatWander3 11s infinite; }
-.float4 { bottom: 10%; right: 5%; animation: floatWander4 13s infinite; }
+.float4 { bottom: 10%; right: 0%; animation: floatWander4 13s infinite; }
 .float5 { top: 20%; left: 30%; animation: floatWander5 14s infinite; }
 .float6 { bottom: 25%; right: 25%; animation: floatWander6 15s infinite; }
 .float7 { top: 35%; left: 60%; animation: floatWander7 16s infinite; }

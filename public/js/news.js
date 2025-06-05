@@ -1,11 +1,44 @@
-const rss_url = 'https://spectrum.ieee.org/rss/robotics';
-const api_url = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss_url);
+const rss_urls = [
+  'https://spectrum.ieee.org/rss/robotics',
+  'https://www.therobotreport.com/feed/',
+  'https://roboticsbusinessreview.com/feed/',
+  'https://robohub.org/feed',
+  'https://blog.robotiq.com/rss.xml',
+  'https://www.unite.ai/category/robotics/feed',
+  'https://newatlas.com/robotics/index.rss',
+  'https://www.roboticmagazine.com/feed',
+  'https://community.robotshop.com/blog/feed',
+  'https://techxplore.com/rss-feed/robotics-news/',
+  'https://www.sciencedaily.com/rss/computers_math/robotics.xml',
+  'https://news.mit.edu/rss/topic/robotics'
+];
 
-fetch(api_url)
-  .then(response => response.json())
-  .then(data => {
+function fetchAllNews() {
+  const all = rss_urls.map(url => {
+    const api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url);
+    return fetch(api).then(res => res.json()).catch(() => null);
+  });
+
+  Promise.all(all).then(responses => {
+    const seenTitles = new Set();
+    const items = [];
+
+    responses.forEach(res => {
+      if (res && res.items) {
+        res.items.forEach(item => {
+          const key = item.title.trim().toLowerCase();
+          if (!seenTitles.has(key)) {
+            seenTitles.add(key);
+            items.push(item);
+          }
+        });
+      }
+    });
+
+    items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
     const container = document.getElementById('robotics-news');
-    data.items.slice(0, 10).forEach(item => {
+
+    items.slice(0, 25).forEach(item => {
       const news = document.createElement('div');
       news.className = 'news-item';
 
@@ -15,7 +48,7 @@ fetch(api_url)
 
       const date = document.createElement('div');
       date.className = 'news-date';
-      date.textContent = new Date(item.pubDate).toLocaleDateString();
+      date.textContent = new Date(item.pubDate).toLocaleString();
 
       const desc = document.createElement('div');
       desc.className = 'news-desc';
@@ -39,8 +72,7 @@ fetch(api_url)
       news.appendChild(desc);
       container.appendChild(news);
     });
-  })
-  .catch(err => {
-    const container = document.getElementById('robotics-news');
-    container.innerHTML = '<p style="color:#f00; text-align:center;">Failed to load news. Try again later.</p>';
   });
+}
+
+fetchAllNews();

@@ -1,146 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 body {
-  background: #000010;
   margin: 0;
   padding: 0;
+  background: #010a13;
+  font-family: 'Orbitron', sans-serif;
   overflow-x: hidden;
+  color: #00ffff;
   position: relative;
+  min-height: 100vh;
 }
 
-body::before {
-  content: "";
+.background-glow {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    135deg,
-    #0ff2 0px,
-    #0ff2 2px,
-    transparent 2px,
-    transparent 20px
-  );
-  opacity: 0.03;
-  animation: moveBackground 30s linear infinite;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #00ffea22 0%, transparent 80%);
+  overflow: hidden;
+  z-index: -2;
 }
 
-@keyframes moveBackground {
-  0% {
-    transform: translate(0%, 0%);
-  }
-  100% {
-    transform: translate(-25%, -25%);
-  }
+.background-glow::before,
+.background-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle, #0ff 2px, transparent 2px),
+    radial-gradient(circle, #0ff 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-repeat: repeat;
+  animation: starfieldMove 40s linear infinite;
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 50%;
+}
+.background-glow::after {
+  animation-delay: 20s;
+  opacity: 0.1;
+}
+
+@keyframes starfieldMove {
+  0% { background-position: 0 0, 25px 25px; }
+  100% { background-position: 50px 50px, 75px 75px; }
 }
 
 #robotics-news {
-  max-width: 850px;
-  margin: 4rem auto;
-  background: rgba(8, 13, 18, 0.9);
-  border: 1px solid #0ff;
+  max-width: 1000px;
+  margin: 4rem auto 6rem;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(145deg, #021823, #0a2940);
+  border: 2px solid #00ffe5;
   border-radius: 20px;
-  padding: 2rem;
-  font-family: 'Segoe UI', sans-serif;
-  color: #0ff;
-  box-shadow: 0 0 30px #0ff4, 0 0 80px #0ff2 inset;
+  box-shadow:
+    0 0 30px #00ffe5aa,
+    inset 0 0 15px #00ffe5cc;
+  backdrop-filter: saturate(180%) blur(15px);
+  position: relative;
+  z-index: 10;
 }
 
 #robotics-news h2 {
   text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 15px #0ff;
-  letter-spacing: 2px;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 3rem;
+  color: #00ffff;
+  text-shadow:
+    0 0 8px #00e0ff,
+    0 0 20px #00e0ff;
+  user-select: none;
 }
 
 .news-item {
-  margin-bottom: 1.2rem;
-  border-bottom: 1px solid #0ff3;
-  padding-bottom: 1rem;
-  transition: all 0.3s ease;
+  background: #01232f;
+  border: 1px solid #00ffff66;
+  border-radius: 14px;
+  margin: 1.8rem 0;
+  box-shadow: 0 0 15px #00ffe533;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  overflow: hidden;
 }
 
-.news-item:last-child {
-  border-bottom: none;
+.news-item:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 25px #00fffbaa,
+    0 0 30px #00fffbaa inset;
 }
 
 .news-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: #001920;
-  padding: 1.2rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  padding: 1.4rem 2rem 1.4rem 1.7rem;
+  font-size: 1.4rem;
   position: relative;
-  padding-right: 2.5rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #003f54, #005f7a);
+  border-radius: 14px 14px 0 0;
+  color: #00ffff;
+  user-select: none;
+  text-shadow:
+    0 0 10px #00f9ff;
+  transition: background 0.4s ease;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 .news-title:hover {
-  background: #003344;
-  box-shadow: 0 0 12px #0ffb, inset 0 0 4px #0ff;
+  background: linear-gradient(90deg, #00dfff, #0099cc);
 }
 
 .news-title::after {
   content: "▼";
   position: absolute;
-  right: 1.2rem;
+  right: 1.8rem;
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
-  font-size: 1rem;
-  color: #0ff;
-  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+  color: #00f7ff;
+  transition: transform 0.35s ease;
+  user-select: none;
 }
 
 .news-title.open::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.news-title.open {
-  background: #005566;
-  box-shadow: 0 0 15px #0ff, inset 0 0 6px #0ff;
-}
-
 .news-date {
-  font-size: 0.9rem;
-  color: #88ffff;
-  margin-top: 0.3rem;
+  padding: 0.5rem 1.7rem;
+  font-size: 0.88rem;
+  color: #66ffffcc;
   font-style: italic;
-  padding-left: 0.4rem;
+  user-select: none;
+  letter-spacing: 0.05em;
 }
 
 .news-desc {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
-  font-size: 1rem;
-  padding: 0 1rem;
-  color: #ccffff;
+  transition: max-height 0.7s ease, opacity 0.7s ease, padding 0.7s ease;
+  padding: 0 1.7rem;
   opacity: 0;
-  pointer-events: none;
+  font-size: 1rem;
+  color: #bbffffcc;
+  background: #001d2c;
+  border-radius: 0 0 14px 14px;
+  line-height: 1.5;
+  user-select: text;
 }
 
 .news-desc.open {
-  margin-top: 0.8rem;
   max-height: 500px;
+  padding-bottom: 1.3rem;
   opacity: 1;
-  pointer-events: all;
 }
 
 .news-link {
   display: inline-block;
-  margin-top: 0.6rem;
-  color: #0ff;
-  font-weight: 500;
-  text-decoration: underline;
-  font-size: 0.95rem;
+  margin-top: 0.7rem;
+  color: #00ffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px dashed #00ffff;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  user-select: none;
 }
 
 .news-link:hover {
-  color: #00ffff;
-  text-shadow: 0 0 6px #0ff;
+  color: #aaffff;
+  border-bottom: 1.5px solid #aaffff;
 }
+
+#robotics-news {
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff44 transparent;
+}
+
+#robotics-news::-webkit-scrollbar {
+  width: 9px;
+}
+
+#robotics-news::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#robotics-news::-webkit-scrollbar-thumb {
+  background-color: #00ffff66;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+@media (max-width: 600px) {
+  #robotics-news {
+    margin: 2rem 1rem 4rem;
+    padding: 2rem;
+  }
+  #robotics-news h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .news-title {
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+  }
+  .news-desc {
+    font-size: 0.9rem;
+  }
+}
+
 /*nav tab*/
 :root {
   --primary-color: #00ffe0;

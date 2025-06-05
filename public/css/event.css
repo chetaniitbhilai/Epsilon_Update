@@ -24,6 +24,7 @@ body {
   scroll-behavior: smooth;
   min-height: 100vh;
   position: relative;
+
 }
 #background-canvas {
   position: fixed;
@@ -107,7 +108,7 @@ body {
   color: #0ff;
   border-bottom: 2px solid cyan;
   border-bottom: 2px solid cyan;
-  
+  overflow: hidden;
 }
 
 .hero::before {

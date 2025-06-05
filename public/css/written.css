@@ -23,7 +23,7 @@ html {
   background-image: url("../images/title.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: cener;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,9 +39,19 @@ html {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 0, 64, 0.25));
-  backdrop-filter: blur(2px); 
+  backdrop-filter: blur(2px);
   z-index: 1;
+  animation: overlayGlow 15s linear infinite;
 }
+
+@keyframes overlayGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
 
 
 .logob, .logoe {
@@ -191,33 +201,42 @@ a {
 
 
 }
+
+a:hover {
+  color: var(--hover-color);
+  text-shadow: 0 0 8px var(--hover-color), 0 0 20px var(--hover-color);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
 a::after {
-  content:"";
+  content: "";
   position: absolute;
   left: 0;
   bottom: -3px;
   height: 2px;
   width: 100%;
   background-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
-  font-family: var(--font-tech);
-
-}
-
-a:hover {
-  color: var(--hover-color);
-  font-family: var(--font-tech);
-
 }
 
 a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-  font-family: var(--font-tech);
-
+  animation: underlinePulse 1.5s infinite;
 }
+
+@keyframes underlinePulse {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--hover-color), 0 0 20px var(--hover-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--hover-color), 0 0 30px var(--hover-color);
+  }
+}
+
 
 @keyframes fadeIn {
   to {
@@ -239,10 +258,17 @@ body {
   font-family: var(--font-tech);
 
 }
- @keyframes flicker {
-      0%, 100% { opacity: 1; text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
-      50% { opacity: 0.8; text-shadow: 0 0 20px #0ff, 0 0 30px #0ff; }
-    }
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+    text-shadow: 0 0 30px #0ff, 0 0 40px #0ff;
+  }
+}
+
 /*roborealm*/
 .introduction {
   max-width: 900px;
@@ -399,25 +425,25 @@ animation: flicker 3s infinite;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 /*coordinator box end*/
-/*mentor box start*/
+/* mentor box start */
 .mentor {
   text-align: center;
   padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-tech);
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards, flicker 3s infinite;
   animation-delay: 2s;
-   animation: flicker 3s infinite;
 }
 
 .mentor h1 {
   font-size: 2rem;
   font-weight: bold;
-  color: #00ffab; 
+  color: #00ffab;
   margin-bottom: 30px;
+  font-family: var(--font-tech);
 }
 
 .mentorbox-container {
@@ -437,17 +463,14 @@ animation: flicker 3s infinite;
   padding: 20px;
   margin: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.45);
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
-  box-shadow: 0 0 20px rgba(0, 255, 200, 0.45);
-
-
-
+  font-family: var(--font-tech);
 }
 
 .mentor-img {
@@ -462,6 +485,7 @@ animation: flicker 3s infinite;
 .mentorbox h2 {
   margin-top: 10px;
   font-weight: 700;
+  font-family: var(--font-tech);
 }
 
 .iconfolder2 {
@@ -475,7 +499,7 @@ animation: flicker 3s infinite;
   display: inline-block;
   padding: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0f766e, #14b8a6); 
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
   box-shadow: 0 4px 10px rgba(13, 148, 136, 0.5);
   color: white;
   font-size: 1.5rem;
@@ -488,7 +512,8 @@ animation: flicker 3s infinite;
   transform: scale(1.15);
   cursor: pointer;
 }
-/*mentor end*/
+/* mentor end */
+
 /*core start*/
 
 .core-member {
@@ -573,22 +598,105 @@ animation: flicker 3s infinite;
   grid-column: 1 / -1; 
 }
 
-/*footer*/
+/* core start */
+
+.core-member {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards, flicker 3s infinite;
+  animation-delay: 1s;
+}
+
+.core-member h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ffc3; 
+  margin-bottom: 30px;
+}
+
+.corebox-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.corebox {
+  background: linear-gradient(135deg, #0a0a0a, #111827, #1f2937);
+  border-radius: 14px;
+  padding: 25px 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  width: 100%;
+  max-width: 350px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.core-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.iconfolder3 {
+  margin-top: 18px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.iconfolder3 .icon {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, #101011, #dadee4);
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.iconfolder3 .icon:hover {
+  background: linear-gradient(135deg, #bfc6d3, #222831);
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+.corebox-container > .corebox:nth-child(7) {
+  grid-column: 1 / -1;
+}
+
+
+/* footer */
 footer {
   position: relative;
   background: linear-gradient(120deg, #0a1a2a, #142b45, #0a1a2a);
-  padding: 60px 30px 70px;
+  padding: 15px 30px 20px;
   color: #d0dfe8;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   overflow: hidden;
-  box-shadow: inset 0 0 15px #092b47cc;
-  border-top: 3px solid #1b2f4a;
-   opacity: 0;
+  box-shadow: inset 0 0 20px #092b47cc;
+  border-top: 2px solid #1b2f4a;
+  opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
   animation-delay: 2s;
-animation: flicker 3s infinite;
-
+  animation: flicker 3s infinite;
+  border-radius: 8px 8px 0 0;
 }
 
 
@@ -607,7 +715,6 @@ footer::before {
   z-index: 0;
 }
 
-
 .contact h1 {
   font-size: 42px;
   margin-bottom: 15px;
@@ -619,7 +726,6 @@ footer::before {
   position: relative;
   z-index: 1;
 }
-
 
 .contact h2 {
   font-size: 24px;
@@ -637,7 +743,6 @@ footer::before {
   z-index: 1;
 }
 
-
 .contact .tagline {
   font-size: 14px;
   color: #85a3b8;
@@ -650,7 +755,6 @@ footer::before {
   position: relative;
   z-index: 1;
 }
-
 
 .logo-circle {
   width: 110px;
@@ -720,7 +824,6 @@ footer::before {
   filter: drop-shadow(0 0 6px #00f260aa);
 }
 
-
 .contact p a {
   display: inline-block;
   font-size: 20px;
@@ -744,7 +847,6 @@ footer::before {
   box-shadow: 0 0 16px #0575e6aa, 0 0 30px #00f260aa;
 }
 
-
 .footer-lines {
   width: 100%;
   max-width: 700px;
@@ -757,7 +859,6 @@ footer::before {
   z-index: 1;
 }
 
-
 .footer-motto {
   font-size: 14px;
   color: #8cb8d9;
@@ -769,4 +870,5 @@ footer::before {
   position: relative;
   z-index: 1;
 }
+
 

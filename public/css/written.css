@@ -23,7 +23,7 @@ html {
   background-image: url("../images/title.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: cener;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,7 +192,7 @@ a {
 
 }
 a::after {
-  content: "";
+  content:"";
   position: absolute;
   left: 0;
   bottom: -3px;
@@ -368,8 +368,8 @@ animation: flicker 3s infinite;
   display: inline-block;
   padding: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
-  box-shadow: 0 4px 10px rgba(138, 43, 226, 0.5);
+  background: linear-gradient(135deg, #6e08fe, #4a00e0);
+  box-shadow: 0 4px 10px rgba(132, 1, 254, 0.5);
   color: white;
   font-size: 1.5rem;
   transition: background 0.3s ease, transform 0.3s ease;

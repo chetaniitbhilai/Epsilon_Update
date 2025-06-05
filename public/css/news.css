@@ -1,26 +1,62 @@
+body {
+  background: #000010;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    135deg,
+    #0ff2 0px,
+    #0ff2 2px,
+    transparent 2px,
+    transparent 20px
+  );
+  opacity: 0.03;
+  animation: moveBackground 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  100% {
+    transform: translate(-25%, -25%);
+  }
+}
+
 #robotics-news {
   max-width: 850px;
-  margin: 3rem auto;
-  background: #080d12;
+  margin: 4rem auto;
+  background: rgba(8, 13, 18, 0.9);
   border: 1px solid #0ff;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 2rem;
   font-family: 'Segoe UI', sans-serif;
   color: #0ff;
-  box-shadow: 0 0 25px #0ff3;
+  box-shadow: 0 0 30px #0ff4, 0 0 80px #0ff2 inset;
 }
 
 #robotics-news h2 {
   text-align: center;
   font-size: 2.4rem;
-  margin-bottom: 1.8rem;
-  text-shadow: 0 0 12px #0ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px #0ff;
   letter-spacing: 2px;
 }
 
 .news-item {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #0ff4;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #0ff3;
   padding-bottom: 1rem;
   transition: all 0.3s ease;
 }
@@ -31,23 +67,39 @@
 
 .news-title {
   font-size: 1.2rem;
-  cursor: pointer;
   font-weight: bold;
   background: #001920;
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 1.2rem;
+  border-radius: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px transparent;
+  cursor: pointer;
+  position: relative;
+  padding-right: 2.5rem;
 }
 
 .news-title:hover {
   background: #003344;
-  box-shadow: 0 0 12px #0ff9;
+  box-shadow: 0 0 12px #0ffb, inset 0 0 4px #0ff;
+}
+
+.news-title::after {
+  content: "▼";
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  font-size: 1rem;
+  color: #0ff;
+  transition: transform 0.3s ease;
+}
+
+.news-title.open::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .news-title.open {
   background: #005566;
-  box-shadow: 0 0 15px #0ff;
+  box-shadow: 0 0 15px #0ff, inset 0 0 6px #0ff;
 }
 
 .news-date {
@@ -55,6 +107,7 @@
   color: #88ffff;
   margin-top: 0.3rem;
   font-style: italic;
+  padding-left: 0.4rem;
 }
 
 .news-desc {
@@ -62,13 +115,17 @@
   overflow: hidden;
   transition: max-height 0.5s ease;
   font-size: 1rem;
-  padding: 0 0.8rem;
+  padding: 0 1rem;
   color: #ccffff;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .news-desc.open {
   margin-top: 0.8rem;
   max-height: 500px;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .news-link {
@@ -82,4 +139,77 @@
 
 .news-link:hover {
   color: #00ffff;
+  text-shadow: 0 0 6px #0ff;
 }
+/*nav tab*/
+:root {
+  --primary-color: #00ffe0;
+  --secondary-color: #1e1e2f;
+  --hover-color: #00bcd4;
+  --bg-color: #0a0a10;
+  --card-bg: #151525;
+  --timeline-color: #00f0ff;
+  --font-tech: 'Orbitron', sans-serif;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw;
+  margin-top: 20px;
+  z-index: 3;
+  font-size: 1.2vw;
+  position: sticky;
+  top: 0;
+  background-color: rgba(10, 10, 10, 0.95);
+  padding: 12px 0;
+  box-shadow: var(--shadow-glow);
+  border-bottom: 2px solid #00fff7;
+  font-family: var(--font-tech);
+  text-transform: uppercase;
+  
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: var(--font-tech);
+
+}
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  font-family: var(--font-tech);
+
+}
+
+a:hover {
+  color: var(--hover-color);
+  font-family: var(--font-tech);
+
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  font-family: var(--font-tech);
+
+}
+.font
+{
+  font-family: var(--font-tech);
+ animation: flicker 3s infinite;
+}
+
+
+

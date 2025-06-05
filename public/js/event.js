@@ -2,15 +2,7 @@ const toggleBtn = document.querySelector('.toggle-upcoming');
 const sidebar = document.querySelector('.upcoming-sidebar');
 const closeBtn = document.querySelector('.close-sidebar');
 
-toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('hidden');
-});
 
-if (closeBtn) {
-  closeBtn.addEventListener('click', () => {
-    sidebar.classList.add('hidden');
-  });
-}
 
 
 const canvas = document.getElementById('background-canvas');

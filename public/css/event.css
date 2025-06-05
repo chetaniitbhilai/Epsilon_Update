@@ -153,7 +153,7 @@ nav {
 .float1 { top: 6%; left: 5%; animation: floatWander1 10s infinite; }
 .float2 { top: 10%; right: 10%; animation: floatWander2 12s infinite; }
 .float3 { bottom: 15%; left: 10%; animation: floatWander3 11s infinite; }
-.float4 { bottom: 10%; right: 0%; animation: floatWander4 13s infinite; }
+.float4 { bottom: 10%; right: 1%; animation: floatWander4 13s infinite; }
 .float5 { top: 20%; left: 30%; animation: floatWander5 14s infinite; }
 .float6 { bottom: 25%; right: 25%; animation: floatWander6 15s infinite; }
 .float7 { top: 35%; left: 60%; animation: floatWander7 16s infinite; }

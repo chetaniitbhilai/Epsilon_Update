@@ -10,18 +10,8 @@ const rss_urls = [
   'https://community.robotshop.com/blog/feed',
   'https://techxplore.com/rss-feed/robotics-news/',
   'https://www.sciencedaily.com/rss/computers_math/robotics.xml',
-  'https://www.wired.com/feed/category/gear/latest/ss', 
-   'https://www.engadget.com/rss.xml',                            
-  'https://www.techcrunch.com/feed/',                            
-  'https://www.theverge.com/rss/index.xml',                     
-    'https://arstechnica.com/feed/',                               
-  'https://feeds.bbci.co.uk/news/technology/rss.xml',           
-  'https://www.cnet.com/rss/news/',                             
-  'https://www.nasa.gov/rss/dyn/breaking_news.rss',              
-  'https://www.sciencedaily.com/rss/top/technology.xml',         
-  'https://www.futurity.org/feed/', 
   'https://news.mit.edu/rss/topic/robotics'
- 
+  
 ];
 
 function fetchAllNews() {

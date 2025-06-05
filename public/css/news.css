@@ -1,0 +1,85 @@
+#robotics-news {
+  max-width: 850px;
+  margin: 3rem auto;
+  background: #080d12;
+  border: 1px solid #0ff;
+  border-radius: 16px;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #0ff;
+  box-shadow: 0 0 25px #0ff3;
+}
+
+#robotics-news h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 1.8rem;
+  text-shadow: 0 0 12px #0ff;
+  letter-spacing: 2px;
+}
+
+.news-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #0ff4;
+  padding-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  background: #001920;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px transparent;
+}
+
+.news-title:hover {
+  background: #003344;
+  box-shadow: 0 0 12px #0ff9;
+}
+
+.news-title.open {
+  background: #005566;
+  box-shadow: 0 0 15px #0ff;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #88ffff;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+.news-desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  font-size: 1rem;
+  padding: 0 0.8rem;
+  color: #ccffff;
+}
+
+.news-desc.open {
+  margin-top: 0.8rem;
+  max-height: 500px;
+}
+
+.news-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: #0ff;
+  font-weight: 500;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.news-link:hover {
+  color: #00ffff;
+}

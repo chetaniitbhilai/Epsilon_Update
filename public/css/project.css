@@ -23,25 +23,27 @@ body {
   height: 100vh;
   background: transparent;
 }
-
 .nav-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   padding: 1rem;
   background: linear-gradient(to right, #000022, #000010);
   border-bottom: 2px solid cyan;
   box-shadow: 0 0 20px #00f7ff77;
   z-index: 5;
   position: fixed;
-  width:100%;
+  width: 100%;
+  top: 0;
 }
 
 .nav-bar a {
   color: #00f7ff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-bar a::after {
@@ -66,6 +68,7 @@ body {
   color: rgb(254, 163, 27);
   text-shadow: 0 0 10px cyan;
 }
+
 
 .hero-section {
   text-align: center;

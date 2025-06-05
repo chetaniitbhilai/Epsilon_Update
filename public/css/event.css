@@ -35,46 +35,40 @@ body {
   pointer-events: none;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 20, 0.85);
-  z-index: 1000;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid cyan;
-  box-shadow: 0 2px 10px #00fff766;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .nav-bar {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 1rem;
+  background: linear-gradient(to right, #000022, #000010);
+  border-bottom: 2px solid cyan;
+  box-shadow: 0 0 20px #00f7ff77;
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .nav-bar a {
-  color: #00fff7;
+  color: #00f7ff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   position: relative;
-  transition: 0.3s;
-  padding-bottom: 4px;
+  white-space: nowrap;
 }
 
 .nav-bar a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   width: 100%;
   height: 2px;
   background: cyan;
   transform: scaleX(0);
-  transform-origin: right;
   transition: transform 0.3s ease;
+  transform-origin: right;
 }
 
 .nav-bar a:hover::after {
@@ -83,9 +77,10 @@ nav {
 }
 
 .nav-bar a:hover {
-  color: rgb(238, 136, 19);
+  color: rgb(254, 163, 27);
   text-shadow: 0 0 10px cyan;
 }
+
 .hero {
   text-align: center;
   padding: 8rem 1rem 6rem;
